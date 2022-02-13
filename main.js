@@ -66,5 +66,12 @@ else
     document.getElementById("detected").innerHTML="You baby is not there in the room.";
 }
     }
+    
+    if(object.length == 0)
+     {
+          document.getElementById("detected").innerHTML = "Baby Not Found";
+           console.log("play"); 
+           song.play();
+     }
 }
 }
