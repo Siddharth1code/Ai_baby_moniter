@@ -4,7 +4,7 @@ object=[];
 song="";
 function preload()
 {
-    
+    song=loadSound("sister_alert,mp3");
 }
 function setup() 
 {
@@ -54,13 +54,17 @@ function draw()
         noFill();
         stroke(r,g,b);
         rect(object[i].x ,object[i].y , object[i].width ,object[i].height);
-    }
-}
 
-if(objec[i].label != "person")
+        if(objec[i].label == "person")
 {
-    song= loadSound('sister_alert.mp3');   
+    song.stop();
+    document.getElementById("detected").innerHtml = "Baby found";
+}
+else
+{
+    song.play();
     document.getElementById("detected").innerHTML="You baby is not there in the room.";
 }
-
+    }
+}
 }
