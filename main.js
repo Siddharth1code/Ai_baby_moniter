@@ -1,10 +1,9 @@
-img="";
 status="";
 object=[];
 song="";
 function preload()
 {
-    song=loadSound("sister_alert,mp3");
+    song=loadSound("sister_alert.mp3");
 }
 function setup() 
 {
@@ -58,18 +57,18 @@ function draw()
         if(objec[i].label == "person")
 {
     song.stop();
-    document.getElementById("detected").innerHtml = "Baby found";
+    document.getElementById("number_of_object").innerHTML = "Baby found";
 }
 else
 {
     song.play();
-    document.getElementById("detected").innerHTML="You baby is not there in the room.";
+    document.getElementById("number_of_object").innerHTML="You baby is not there in the room.";
 }
     }
-    
+
     if(object.length == 0)
      {
-          document.getElementById("detected").innerHTML = "Baby Not Found";
+          document.getElementById("number_of_object").innerHTML = "Baby Not Found";
            console.log("play"); 
            song.play();
      }
